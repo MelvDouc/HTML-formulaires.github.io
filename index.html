@@ -3,20 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Formulaires</title>
 </head>
 <body>
 
-    <form action="">
+    <form action="./resultats.html" method="GET"> <!-- Les navigateurs ne peuvent pas rendre la méthode POST. -->
+        
         <div>
-            <label for="">Name</label>
-            <input type="text">
+            <label for="nom">Nom</label> <!-- L'attribut doit avoir la même valeur que l'id de l'input pour que lors d'un clic sur le label, l'input soit mis en relief. -->
+            <input type="text" name="nom" id="nom" value="utilisateur" required>
         </div>
+        
         <div>
-            <label for="">Password</label>
-            <input type="text">
+            <label for="mot-de-passe">Mot de passe</label>
+            <input type="password" name="mot-de-passe" id="mot-de-passe" placeholder="Votre de mot de passe&hellip;" required> <!-- Le type "password" cache les caractères -->
         </div>
-        <button>Envoyer</button>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="age">Âge</label>
+            <input type="number" name="age" id="age" min="1" max="200" step="5">
+        </div>
+        
+        <div>
+            <label for="date">Date de naissance</label>
+            <input type="date" name="date" id="date" min="2021-01-01">
+        </div>
+
+        <div>
+            Sexe
+            <div>
+                <input type="radio" name="sexe" id="homme" value="homme"> <!-- La valeur est ce qui sera envoyé au formulaire. -->
+                <label for="homme">Homme</label>
+            </div>
+            <div>
+                <input type="radio" name="sexe" id="femme" value="femme">
+                <label for="femme">Femme</label>
+            </div>
+        </div>
+
+        <div>
+            10<sup>5</sup>&thinsp;=&thinsp;? (Plusieurs réponses possibles.)
+            <div>
+                <input type="checkbox" name="rep1" id="rep1">
+                <label for="rep1">10 000</label>
+            </div>
+            <div>
+                <input type="checkbox" name="rep2" id="rep2">
+                <label for="rep2">10 * 5 * 5</label>
+            </div>
+            <div>
+                <input type="checkbox" name="rep3" id="rep3">
+                <label for="rep3">5 000 * 2</label>
+            </div>
+        </div>
+
+        <button type="reset">Effacer</button>
+        <button type="submit">Envoyer</button>
 
 
 

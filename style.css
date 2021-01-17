@@ -1,0 +1,23 @@
+
+/* Supprimer les flèches haut/bas des inputs de type "number" */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    margin-left: 1em;
+}
+
+form > div {
+    margin: 1em auto;
+}
