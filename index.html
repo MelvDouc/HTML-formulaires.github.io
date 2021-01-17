@@ -8,12 +8,15 @@
 </head>
 <body>
 
-    <form action="./resultats.html" method="GET"> <!-- Les navigateurs ne peuvent pas rendre la méthode POST. -->
+    <form action="./resultats.html" method="GET" enctype="multipart/form-data"> <!-- Les navigateurs ne peuvent pas rendre la méthode POST. -->
         
         <div>
-            <label for="nom">Nom</label> <!-- L'attribut doit avoir la même valeur que l'id de l'input pour que lors d'un clic sur le label, l'input soit mis en relief. -->
+            <label for="nom">Nom</label> <!-- L'attribut "for" doit avoir la même valeur que l'id de l'input pour que lors d'un clic sur le label, l'input soit mis en relief. -->
             <input type="text" name="nom" id="nom" value="utilisateur" required>
         </div>
+
+        <input type="hidden" name="caché" value="Bonjour !">
+        <!-- Apparaitra dans les résultats après l'envoi. -->
         
         <div>
             <label for="mot-de-passe">Mot de passe</label>
@@ -23,6 +26,11 @@
         <div>
             <label for="email">Email</label>
             <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="telephone">Téléphone</label>
+            <input type="tel" name="telephone" id="telephone">
         </div>
 
         <div>
@@ -63,11 +71,37 @@
             </div>
         </div>
 
+        <div>
+            <label for="couleurYeux">Couleur des yeux</label>
+            <select name="couleurYeux" id="couleurYeux"> <!-- Le mot clé "multiple" permettrait de choisir plusieurs options. -->
+                <option label="brun" value="brun"></option> <!-- Le label est le choix proposé par défaut. -->
+                <option value="vert">vert</option>
+                <option value="bleu">bleu</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="bio">Bio</label>
+            <textarea name="bio" id="bio">Je m'appelle&hellip;</textarea>
+        </div>
+
+        <div>
+            <label for="url">URL</label>
+            <input type="url" name="url" id="url">
+        </div>
+
+        <div>
+            <label for="fichier">Fichier</label>
+            <input type="file" name="fichier">
+        </div>
+
+        <div>
+            <label for="couleur">Couleur</label>
+            <input type="color" name="couleur" id="couleur">
+        </div>
+
         <button type="reset">Effacer</button>
         <button type="submit">Envoyer</button>
-
-
-
     </form>
     
 </body>

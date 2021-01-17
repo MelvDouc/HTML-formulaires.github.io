@@ -7,14 +7,16 @@
 </head>
 <body>
 
-    <div id="resultats"></div>
+    <ul id="resultats"></ul>
     <a href="/">Retour au formulaire</a>
     
     <script>
         const listeResultats = document.getElementById('resultats');
-        new URLSearchParams(window.location.search).forEach((value, name) => {
-            listeResultats.append(`${nom}: ${valeur}`)
-            listeResultats.append(document.createElement('br'))
+        new URLSearchParams(window.location.search).forEach((valeur, nom) => {
+            let node = document.createElement('LI');
+            let textnode = document.createTextNode(`${nom} : ${valeur}`);
+            node.appendChild(textnode);
+            listeResultats.appendChild(node)
         })
     </script>
 </body>
